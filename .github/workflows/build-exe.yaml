@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build EXE
-        run: pyinstaller --onefile Simple_CIDR_Tool.py
+        run: pyinstaller --noconsole --onefile Simple_CIDR_Tool.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

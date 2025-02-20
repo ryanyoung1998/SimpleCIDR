@@ -6,7 +6,6 @@
 *.ppt
 *.pptx
 *.csv
-*.txt
 *.log
 *.pyc
 *.pyo

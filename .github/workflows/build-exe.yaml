@@ -27,7 +27,7 @@ jobs:
         run: pyinstaller --onefile Simple_CIDR_Tool.py
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: simple-cidr-tool-exe
           path: dist/Simple_CIDR_Tool.exe

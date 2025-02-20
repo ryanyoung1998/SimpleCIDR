@@ -490,21 +490,20 @@ class Page(Event):
 
         upper_left_frame = self.create_Frame_with_grid(
             frame=upper_frame, row=0, column=0)
-        upper_right_frame = self.create_Frame_with_grid(
-            frame=upper_frame, row=0, column=1)
 
         # 上面左列的 Frame 内容
         # 等待汇总子网列表
-        # pending_list_frame = self.create_LabelFrame_with_pack(frame=upper_left_frame, text="等待汇总子网列表", expand=True)
         pending_list_frame = self.create_LabelFrame_with_grid(
-            frame=upper_left_frame, text="等待汇总子网列表", row=0, column=0)
-        # pending_list_frame.rowconfigure(0, weight=1)
-        # pending_list_frame.columnconfigure(0, weight=1)
+            frame=upper_left_frame, text="等待汇总子网列表", row=0, column=0, sticky="nsew", row_weight=1, column_weight=1)
+        upper_left_frame.rowconfigure(0, weight=1)
+        upper_left_frame.columnconfigure(0, weight=1)
         self.pending_text = self.create_Text_with_pack(
             frame=pending_list_frame, state='normal')
 
         # 上面右列的 Frame 内容
         # 汇总完成和汇总失败的 LabelFrame
+        upper_right_frame = self.create_Frame_with_grid(
+            frame=upper_frame, row=0, column=1)
         upper_right_frame.rowconfigure(0, weight=3)
         upper_right_frame.rowconfigure(1, weight=7)
         upper_right_frame.columnconfigure(0, weight=1)
